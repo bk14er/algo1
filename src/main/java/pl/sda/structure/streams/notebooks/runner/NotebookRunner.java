@@ -1,7 +1,7 @@
-package pl.sda.structure.streams.runner;
+package pl.sda.structure.streams.notebooks.runner;
 
-import pl.sda.structure.streams.enums.Brand;
-import pl.sda.structure.streams.enums.Notebook;
+import pl.sda.structure.streams.notebooks.enums.Brand;
+import pl.sda.structure.streams.notebooks.enums.Notebook;
 
 import java.time.Year;
 import java.util.HashSet;

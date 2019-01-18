@@ -24,7 +24,7 @@ public class TaskFilterWithConditionTest {
 
         List<Task> onlyWithLowLevel = filter.getOnlyWith(new TaskFilterWithCondition.TaskCondition() {
             @Override
-            boolean meetCriteria(Task task) {
+            public boolean meetCriteria(Task task) {
                 return task.getPriority().equals(TaskPriority.LOW);
             }
         });
@@ -47,7 +47,7 @@ public class TaskFilterWithConditionTest {
 
         List<Task> onlyWithMediumLevel = filter.getOnlyWith(new TaskFilterWithCondition.TaskCondition() {
             @Override
-            boolean meetCriteria(Task task) {
+            public boolean meetCriteria(Task task) {
                 return task.getPriority().equals(TaskPriority.MEDIUM);
             }
         });
@@ -71,7 +71,7 @@ public class TaskFilterWithConditionTest {
 
         List<Task> onlyWithMediumLevel = filter.getOnlyWith(new TaskFilterWithCondition.TaskCondition() {
             @Override
-            boolean meetCriteria(Task task) {
+            public boolean meetCriteria(Task task) {
                 return task.getPriority().equals(TaskPriority.HIGH);
             }
         });

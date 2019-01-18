@@ -1,4 +1,4 @@
-package pl.sda.structure.streams.enums;
+package pl.sda.structure.streams.notebooks.enums;
 
 import java.time.Year;
 

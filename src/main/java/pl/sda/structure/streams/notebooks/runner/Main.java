@@ -1,4 +1,4 @@
-package pl.sda.structure.streams.runner;
+package pl.sda.structure.streams.notebooks.runner;
 
 public class Main {
 

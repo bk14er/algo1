@@ -20,9 +20,9 @@ public class TaskFilterWithCondition {
     }
 
 
-    public abstract static class TaskCondition {
+    public interface TaskCondition {
 
-        abstract boolean meetCriteria(Task task);
+        boolean meetCriteria(Task task);
 
     }
 
