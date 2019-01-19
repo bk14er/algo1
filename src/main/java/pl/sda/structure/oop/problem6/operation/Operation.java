@@ -12,7 +12,7 @@ package pl.sda.structure.oop.problem6.operation;
  *  Dzielenie (znak "/")
  *
  */
-public class Operation {
+public class Operation extends BasicOperation {
 
     private String operation;
 

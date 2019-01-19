@@ -1,7 +1,19 @@
 package pl.sda.structure.oop.problem6;
 
+import pl.sda.structure.oop.problem6.operation.BasicOperation;
+import pl.sda.structure.oop.problem6.operation.Expression;
+import pl.sda.structure.oop.problem6.operation.Operation;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class ExpressionCalculator {
 
+    List<BasicOperation> operationList = new ArrayList<>();
+
+    public void addOperation(BasicOperation expression) {
+        operationList.add(expression);
+    }
 
     public Integer evaluateAll() {
         Integer result = 0;
@@ -22,6 +34,5 @@ public class ExpressionCalculator {
 
         return result;
     }
-
 
 }

@@ -63,8 +63,19 @@ public class Dynamic2DArray {
          *  *
          *  2
          */
+        ExpressionCalculator calculator = new ExpressionCalculator();
+        calculator.addOperation(new Expression("=2+2"));
+        calculator.addOperation(new Operation("+"));
+        calculator.addOperation(new Expression("=8+8"));
+        calculator.addOperation(new Operation("-"));
+        calculator.addOperation(new Expression("=19-2"));
+        calculator.addOperation(new Operation("*"));
+        calculator.addOperation(new Expression("=2"));
+
+        Integer integer = calculator.evaluateAll();
 
     }
 
 }
+
 

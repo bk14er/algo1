@@ -1,6 +1,6 @@
 package pl.sda.structure.oop.problem6.operation;
 
-public class Expression{
+public class Expression extends BasicOperation{
 
     public String input;
 
