@@ -4,16 +4,13 @@ import java.math.BigDecimal;
 
 public class Engine {
 
-    // Odrzutowy/ Spalinowy / Elektryczny/ Hybrydowy
-    private String engineType;
-
-    // MOC
-    private int power;
-
-    // Pojemność silnika
-    private BigDecimal engineCapacity;
+    private EngineSpecyfiaction engineSpecyfiaction;
 
     //Numer seryjny silnika
     private String serialNumber;
 
+    public Engine(EngineSpecyfiaction engineSpecyfiaction, String serialNumber) {
+        this.engineSpecyfiaction = engineSpecyfiaction;
+        this.serialNumber = serialNumber;
+    }
 }
