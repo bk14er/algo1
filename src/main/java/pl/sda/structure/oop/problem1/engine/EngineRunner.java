@@ -7,15 +7,19 @@ public class EngineRunner {
 
     public static void main(String args[]){
 
-        EngineSpecyfiaction specyfiaction = new EngineSpecyfiaction(
-                EngineType.ELETRYCZNY,new EnginePower(EngineUnit.KM, BigDecimal.TEN),
-                new BigDecimal(123.23));
 
+        EnginePower enginePower = new EnginePower(EngineUnit.KM, BigDecimal.TEN),
+                new BigDecimal(123.23);
 
-        Engine engine1= new Engine(specyfiaction,"12340-123");
+        CommonEngineSpecyfication commonSpecyfiaction = new CommonEngineSpecyfication(
+                EngineType.SPALINOWEGO,enginePower);
 
+        ElectricalEngineSpecyfication electricalEngineSpecyfication = new ElectricalEngineSpecyfication(
+                EngineType.SPALINOWEGO,enginePower);
 
-        Engine engine2 = new Engine(specyfiaction,"213231-3213");
+        Engine engine1= new ElectricalEngine(electricalEngineSpecyfication,"12340-123");
+
+        Engine engine2 = new OtherEngine(commonSpecyfiaction,"213231-3213");
 
 
 
