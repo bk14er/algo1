@@ -46,6 +46,25 @@ public class Expression{
         //12 - 2
         String evaluate = evaluate();
 
+        if(evaluate.contains("+")){
+            String[] split = evaluate.split("\\+");
+            return Integer.valueOf(split[0])+ Integer.valueOf(split[1]);
+        }
+        if(evaluate.contains("-")){
+            String[] split = evaluate.split("\\-");
+            return Integer.valueOf(split[0])- Integer.valueOf(split[1]);
+        }
+        if(evaluate.contains("*")){
+            String[] split = evaluate.split("\\*");
+            return Integer.valueOf(split[0]) * Integer.valueOf(split[1]);
+        }
+        if(evaluate.contains("/")){
+            String[] split = evaluate.split("\\/");
+            return Integer.valueOf(split[0])/ Integer.valueOf(split[1]);
+        }
+
+
+
         //TODO
         return Integer.valueOf(evaluate);
     }

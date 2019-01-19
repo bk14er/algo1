@@ -52,30 +52,6 @@ public class Dynamic2DArray {
             System.out.println();
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /**
-         * FIRST
-         *  =12, =14
-         */
-
-
         /**
          * SECOND
          *
@@ -83,7 +59,7 @@ public class Dynamic2DArray {
          *  +
          *  =8+8
          *  -
-         *  =19 - 2
+         *  =19-2
          *  *
          *  2
          */
