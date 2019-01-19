@@ -19,8 +19,10 @@ public class Expression{
      * https://stormit.pl/string-metody/
      */
     public String evaluate() {
-        // TODO
-        throw new RuntimeException();
+        if(input.startsWith("=")){
+            return input.substring(1);
+        }
+        return input;
     }
 
     /**
@@ -41,6 +43,7 @@ public class Expression{
      * @return
      */
     public int calculate() {
+        //12 - 2
         String evaluate = evaluate();
 
         //TODO

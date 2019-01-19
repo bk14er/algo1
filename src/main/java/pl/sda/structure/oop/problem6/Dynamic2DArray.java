@@ -41,13 +41,15 @@ public class Dynamic2DArray {
         excelElements.add(Arrays.asList(new Expression("12"),new Expression("=12")));
         excelElements.add(Arrays.asList(new Expression("=15"),new Expression("=16")));
 
+        excelElements.add(Arrays.asList(new Expression("=12-2"),new Expression("=11+6")));
+        excelElements.add(Arrays.asList(new Expression("=15*2"),new Expression("=24/2")));
 
         for(List<Expression> expressions : excelElements){
 
             for(Expression expression : expressions){
-                System.out.println(expression.evaluate());
+                System.out.print(expression.calculate()+ ",");
             }
-
+            System.out.println();
         }
 
 
