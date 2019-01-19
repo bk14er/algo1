@@ -72,8 +72,8 @@ public class Dynamic2DArray {
         calculator.addOperation(new Operation("*"));
         calculator.addOperation(new Expression("=2"));
 
-        Integer integer = calculator.evaluateAll();
-
+        Integer result = calculator.evaluateAll();
+        System.out.println(result);
     }
 
 }
