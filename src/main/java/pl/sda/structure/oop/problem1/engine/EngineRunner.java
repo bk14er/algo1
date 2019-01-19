@@ -8,8 +8,7 @@ public class EngineRunner {
     public static void main(String args[]){
 
 
-        EnginePower enginePower = new EnginePower(EngineUnit.KM, BigDecimal.TEN),
-                new BigDecimal(123.23);
+        EnginePower enginePower = new EnginePower(EngineUnit.KM, BigDecimal.TEN);
 
         CommonEngineSpecyfication commonSpecyfiaction = new CommonEngineSpecyfication(
                 EngineType.SPALINOWEGO,enginePower);
