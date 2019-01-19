@@ -1,18 +1,20 @@
 package pl.sda.structure.oop.problem1.tyre;
 
-public class Tyre {
+import java.math.BigDecimal;
 
-    // Private int rozmiar w calach
-    private int size;
-
-    //marka opon
-    private String tyreBrandName;
-
-    // Typ opon : ZIMOWE/LETNIE/WIELOSEZONOWE
-    private String tyreType;
+public final class Tyre {
 
     //Numer seryjny opon
-    private String serialNumber;
+    private final String serialNumber;
 
+    private final TyreSpecyfiaction tyreSpecyfiaction;
+
+
+    public Tyre(String serialNumber, TyreSpecyfiaction tyreSpecyfiaction) {
+        this.serialNumber = serialNumber;
+        this.tyreSpecyfiaction = tyreSpecyfiaction;
+    }
 
 }
+
+

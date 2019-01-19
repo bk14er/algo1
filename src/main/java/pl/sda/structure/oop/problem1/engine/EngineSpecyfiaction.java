@@ -2,8 +2,7 @@ package pl.sda.structure.oop.problem1.engine;
 
 import java.math.BigDecimal;
 
-public class EngineSpecyfiaction {
-
+public abstract  class EngineSpecyfiaction {
 
     // Odrzutowy/ Spalinowy / Elektryczny/ Hybrydowy
     private EngineType engineType;
@@ -11,13 +10,8 @@ public class EngineSpecyfiaction {
     // MOC [kW,KM]
     private EnginePower power;
 
-    // Pojemność silnika
-    private BigDecimal engineCapacity;
-
-
-    public EngineSpecyfiaction(EngineType engineType, EnginePower power, BigDecimal engineCapacity) {
+    public EngineSpecyfiaction(EngineType engineType, EnginePower power) {
         this.engineType = engineType;
         this.power = power;
-        this.engineCapacity = engineCapacity;
     }
 }
