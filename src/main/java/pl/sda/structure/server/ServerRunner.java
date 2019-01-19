@@ -10,11 +10,13 @@ public class ServerRunner {
 
     public static void main(String args[]){
 
-        Server serverHttp = new HttpServer();
-        Server tcpServer = new TcpServer();
+        HttpServer serverHttp = new HttpServer();
+        TcpServer tcpServer = new TcpServer();
 
 
         serverHttp.handleRequest(new HttpRequest());
+
+
         tcpServer.handleRequest(new TcpRequest());
     }
 

@@ -1,4 +1,6 @@
 package pl.sda.structure.server.server;
 
-public class HttpServer extends Server {
+import pl.sda.structure.server.request.HttpRequest;
+
+public class HttpServer extends Server<HttpRequest> {
 }

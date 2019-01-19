@@ -1,5 +1,7 @@
 package pl.sda.structure.server.server;
 
 
-public class TcpServer extends Server {
+import pl.sda.structure.server.request.TcpRequest;
+
+public class TcpServer extends Server<TcpRequest> {
 }
