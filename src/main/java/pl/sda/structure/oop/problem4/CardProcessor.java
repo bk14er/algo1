@@ -13,6 +13,7 @@ public class CardProcessor {
         creditCardList.add(new CreditCard("MASTERCARD", new String[]{"34","35","36"}, new Integer[]{16,17,18}));
         creditCardList.add(new CreditCard("VISA", new String[]{"45","46"}, new Integer[]{18}));
         creditCardList.add(new CreditCard("AmericanExpress", new String[]{"60","65"}, new Integer[]{16}));
+        creditCardList.add(new CreditCard("RuCard", new String[]{"60","65"}, new Integer[]{16}));
 
     }
 
@@ -32,6 +33,9 @@ public class CardProcessor {
      *                      długość 16
      *                      czyli np. 6011111111111111 (16 znakow)
      *                                6511111111111111 (16 znakow)
+     *
+     * RuCard               -prefix 98 99
+     *                      dlugosć 22, 23
      *
      *
      * W przeciwnym wypadku zwraca "Unknown"
