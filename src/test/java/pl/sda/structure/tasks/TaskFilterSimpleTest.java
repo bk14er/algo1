@@ -1,6 +1,7 @@
 package pl.sda.structure.tasks;
 
 import org.junit.Test;
+import pl.sda.structure.tasks.TaskFilterSimple.Condition;
 import pl.sda.structure.tasks.model.Task;
 import pl.sda.structure.tasks.model.TaskPriority;
 
@@ -25,7 +26,12 @@ public class TaskFilterSimpleTest {
         List<Task> allTasks = Arrays.asList(t1, t2, t3);
         TaskFilterSimple filter = new TaskFilterSimple(allTasks);
 
-        List<Task> onlyWithLowLevel = filter.getOnlyWithLowLevel();
+        List<Task> onlyWithLowLevel = filter.getWithPriority(new Condition() {
+            @Override
+            public boolean meetCriteria(TaskPriority priority) {
+                return priority.equals(TaskPriority.LOW);
+            }
+        });
 
         assertEquals(onlyWithLowLevel.size(), 2);
         assertEquals(onlyWithLowLevel, Arrays.asList(t1, t2));

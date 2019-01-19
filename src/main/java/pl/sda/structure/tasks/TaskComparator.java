@@ -31,7 +31,19 @@ public class TaskComparator implements Comparator<Task> {
      */
     @Override
     public int compare(Task t1, Task t2) {
-        //TODO fixme
-        throw new RuntimeException("TODO");
+
+        if(t1.getPriority().equals(t2.getPriority())){
+
+            if(t1.getDueDate().compareTo(t2.getDueDate()) >0){
+                return -1;
+            }
+            return 1;
+        }
+
+        if(t1.getPriority().getLevel() > t2.getPriority().getLevel()){
+            return -1;
+        }
+        return 1;
+
     }
 }
