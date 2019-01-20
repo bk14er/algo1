@@ -23,6 +23,17 @@ public class MapIntroduction {
      */
     public static void main(String args[]) {
 
+        Map<String, Integer> addresses = new HashMap<>();
+
+        Integer anna_lewandowsa = addresses.put("Anna Lewandowsa", 123_532_324);
+        Integer mariusz_lewandowski = addresses.put("Mariusz Lewandowski", 523_542_324);
+        Integer adam_nawałka = addresses.put("Adam Nawałka", 222_532_324);
+
+
+        Integer adam_nawałka1 = addresses.put("Adam Nawałka", 111_532_324);
+
+        System.out.println(adam_nawałka1);
+
 
     }
 
