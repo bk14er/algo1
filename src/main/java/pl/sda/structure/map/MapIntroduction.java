@@ -23,15 +23,42 @@ public class MapIntroduction {
     public static void main(String args[]) {
         mapSimple();
 
+        mapWithMultiplyValues();
+
+        mapPassingArguments();
+    }
+
+    private static void mapWithMultiplyValues() {
         Map<String, List<Integer>> numbers = new TreeMap<>();
 
 
         numbers.put("A_L", Arrays.asList(123_321,123_321,183_213));
         numbers.put("G_L", Arrays.asList(554_321,123_321,183_213));
+        numbers.put("D_L", Arrays.asList(154_321,123_321,183_213));
+
+        Set<Map.Entry<String, List<Integer>>> entries = numbers.entrySet();
+        
+        
+        for(Map.Entry<String, List<Integer>> entry : entries){
+            System.out.println("Klucz: " + entry.getKey()+",wartość: "+ entry.getValue());
+        }
 
 
-        List<Integer> alNumber = numbers.get("A_L");
+        Set<String> keys = numbers.keySet();
+        
+        for(String key : keys){
+            System.out.println("Wartość: "+  numbers.get(key));
+        }
+        
 
+
+        /**
+         * Zwróci liste - bo parametryzacja wartości List<Integer>
+         */
+        List<Integer> a_l = numbers.get("A_L");
+    }
+
+    private static void mapPassingArguments() {
         List<String> names = Arrays.asList("A_L", "G_L","M_D","K_W");
         List<Integer> numbersList = Arrays.asList(333_231_321, 432_432_423,432_123, 234_123);
 
@@ -40,10 +67,6 @@ public class MapIntroduction {
         for(int i =0 ; i < names.size(); i++){
             addresses.put(names.get(i), numbersList.get(i));
         }
-
-
-
-
     }
 
     private static void mapSimple() {
