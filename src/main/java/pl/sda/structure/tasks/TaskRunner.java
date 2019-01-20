@@ -1,5 +1,6 @@
 package pl.sda.structure.tasks;
 
+import pl.sda.structure.oop.problem2.PassingParameters;
 import pl.sda.structure.tasks.model.Task;
 import pl.sda.structure.tasks.model.TaskPriority;
 
@@ -27,24 +28,40 @@ public class TaskRunner {
         groupByPriority2(tasks);
 
 
-
     }
 
-    public Map<TaskPriority, Integer> groupByPriorirty(Queue<Task> tasks){
+    public Map<TaskPriority, Integer> groupByPriority(Queue<Task> tasks) {
         Map<TaskPriority, Integer> groupByPriority = new HashMap<>();
 
-        for(Task task : tasks){
+        for (Task task : tasks) {
             Integer orDefault = groupByPriority.getOrDefault(task.getPriority(), 0);
-            groupByPriority.put(task.getPriority(),orDefault);
+            groupByPriority.put(task.getPriority(), orDefault);
         }
 
         return groupByPriority;
     }
 
-    public static Map<TaskPriority, List<Task>> groupByPriority2(Queue<Task> tasks){
-        //TODO
+    public static Map<TaskPriority, List<Task>> groupByPriority2(Queue<Task> tasks) {
 
-        return null;
+        Map<TaskPriority, List<Task>> groupByPriority = new HashMap<>();
+
+        for (Task task : tasks) {
+
+            List<Task> currentTasks = groupByPriority.get(task.getPriority());
+
+            if (currentTasks == null) {
+                currentTasks = new ArrayList<>();
+            }
+            currentTasks.add(task);
+            groupByPriority.put(task.getPriority(),currentTasks);
+        }
+
+
+        //Lista kluczy
+        Set<TaskPriority> taskPriorities = groupByPriority.keySet();
+
+        return groupByPriority;
+
     }
 
 }
