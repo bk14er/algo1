@@ -17,7 +17,7 @@ public class TaskInts {
         Integer maxElement1 = findMaxElement(arrayCreatedStatic);
         System.out.println("Max is " + maxElement1);
         Integer maxElement2 = findMaxElement(arrayWithRandomCreatedElement);
-        System.out.println("Min is " + maxElement2);
+        System.out.println("Max is " + maxElement2);
 
         Integer minElement1 = findMinElement(arrayCreatedStatic);
         System.out.println("Min is: " + minElement1);
@@ -30,14 +30,20 @@ public class TaskInts {
      * Użyj metody max Stream.of().max()
      */
     public Integer findMaxElement(Integer[] ints) {
-        throw new RuntimeException("TODO");
+        return Stream
+                .of(ints)
+                .max((int1,int2)->int1.intValue()- int2.intValue())
+                .get();
     }
 
     /**
      * Użyj metody max Stream.of().min()
      */
     public Integer findMinElement(Integer[] ints) {
-        throw new RuntimeException("TODO");
+        return Stream
+                .of(ints)
+                .min((int1,int2)->int1.intValue()- int2.intValue())
+                .get();
     }
 
     private Integer[] createArray() {
