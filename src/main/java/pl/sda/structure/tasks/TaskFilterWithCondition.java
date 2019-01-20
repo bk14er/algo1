@@ -32,6 +32,10 @@ public class TaskFilterWithCondition {
     };
 
 
+
+
+
+
     public TaskFilterWithCondition(List<Task> allTask) {
         this.allTask = allTask;
     }
