@@ -137,7 +137,7 @@ public class StudentFilterRunner {
 
 
     /**
-     * Zwraca studentów urodzonych przed rokiem 89 tj. LocalDate.of(1989, 12, 31))
+     * Zwraca studentów urodzonych przed rokiem 89 tj. LocalDate.of(1990, 01, 01))
      */
     private static List<Student> filterAllWhereBirdthDayBefore89(List<Student> students) {
         //TODO
