@@ -1,7 +1,9 @@
 package pl.sda.structure.map;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class MapIntroduction {
 
@@ -23,7 +25,7 @@ public class MapIntroduction {
      */
     public static void main(String args[]) {
 
-        Map<String, Integer> addresses = new HashMap<>();
+        HashMap<String, Integer> addresses = new HashMap<>();
 
         Integer anna_lewandowsa = addresses.put("Anna Lewandowsa", 123_532_324);
         Integer mariusz_lewandowski = addresses.put("Mariusz Lewandowski", 523_542_324);
@@ -38,11 +40,30 @@ public class MapIntroduction {
         Integer lewandowskaNumber = addresses.get("Anna Lewandowsa");
         assert 123_532_324 == lewandowskaNumber;
 
-        Integer integer = addresses.get("Donald Tusk");
-
+        Integer donald_tusk_null = addresses.get("Donald Tusk");
+        assert donald_tusk_null == null;
 
         Integer donaldTuskNumber = addresses.getOrDefault("Donald Tusk", 555_555_123);
         assert 555_555_123 == donaldTuskNumber;
+
+
+        Set<String> keys = addresses.keySet();
+
+        for(String key : keys){
+            System.out.println(addresses.get(key));
+        }
+
+        Set<Map.Entry<String, Integer>> entries = addresses.entrySet();
+
+        for(Map.Entry<String, Integer> keyAndValues : entries){
+            System.out.println("Klucz: " + keyAndValues.getKey()+ ", Wartość: "+ keyAndValues.getValue());
+        }
+
+        Collection<Integer> values = addresses.values();
+
+        for(Integer value : values){
+            System.out.println("Wartość: "+ value);
+        }
 
 
     }
