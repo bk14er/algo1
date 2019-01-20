@@ -77,27 +77,8 @@ public class StudentMapRunner {
     }
 
     public static void main(String args[]) {
-        groupStudentByYearOfStudy();
     }
 
-    private static void groupStudentByYearOfStudy() {
-        Map<YearOfStudy, List<Student>> studentByYearOfStudy = new TreeMap<>();
-
-        for(Student student : students){
-            List<Student> studentsFromMap = studentByYearOfStudy.get(student.getYearOfStudy());
-
-            if(studentsFromMap == null){
-                List<Student> newStudentsArray = new ArrayList<>();
-                newStudentsArray.add(student);
-
-                studentByYearOfStudy.putIfAbsent(student.getYearOfStudy(),newStudentsArray);
-            }else{
-                studentsFromMap.add(student);
-            }
-
-
-        }
-    }
 
 
 }

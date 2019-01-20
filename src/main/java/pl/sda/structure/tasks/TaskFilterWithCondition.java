@@ -1,6 +1,7 @@
 package pl.sda.structure.tasks;
 
 import pl.sda.structure.tasks.model.Task;
+import pl.sda.structure.tasks.model.TaskPriority;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +10,27 @@ public class TaskFilterWithCondition {
 
     private final List<Task> allTask;
 
+    public static final TaskCondition lowLevel = new TaskCondition() {
+        @Override
+        public boolean meetCriteria(Task task) {
+            return task.getPriority().equals(TaskPriority.LOW);
+        }
+    };
+
     public TaskFilterWithCondition(List<Task> allTask) {
         this.allTask = allTask;
     }
 
     public List<Task> getOnlyWith(TaskCondition condition) {
         List<Task> result = new ArrayList<>();
-        //TODO zaimplementuj
+
+        for (Task task : allTask) {
+
+            if (condition.meetCriteria(task)) {
+                result.add(task);
+            }
+        }
+
         return result;
     }
 
