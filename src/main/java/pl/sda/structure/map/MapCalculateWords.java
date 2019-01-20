@@ -38,8 +38,15 @@ public class MapCalculateWords {
 
         for (int i = 0; i < word.length(); i++) {
             String charAtI = word.substring(i, i + 1);
-            //TODO wykonaj kroki według powyższego algorytmu
-            throw new RuntimeException("TODO");
+
+//            Integer ilosc = groupByWords.get(charAtI);
+//            if(ilosc == null){
+//                groupByWords.put(charAtI,1);
+//            }else{
+//                groupByWords.put(charAtI,++ilosc);
+//            }
+            Integer ilosc = groupByWords.getOrDefault(charAtI, 0);
+            groupByWords.put(charAtI,++ilosc);
 
         }
 

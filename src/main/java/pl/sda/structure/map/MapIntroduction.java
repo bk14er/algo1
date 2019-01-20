@@ -55,7 +55,7 @@ public class MapIntroduction {
         /**
          * Zwróci liste - bo parametryzacja wartości List<Integer>
          */
-        List<Integer> a_l = numbers.get("A_L");
+        numbers.get("A_L");
     }
 
     private static void mapPassingArguments() {
