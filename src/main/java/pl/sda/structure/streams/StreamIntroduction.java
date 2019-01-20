@@ -1,5 +1,7 @@
 package pl.sda.structure.streams;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -30,6 +32,34 @@ import java.util.stream.Stream;
 public class StreamIntroduction {
 
     public static void main(String args[]) {
+
+
+        //Tworzony statycznie poprzez of
+        List<Integer> collect = Stream
+                .of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+                .filter(x -> x % 2 == 0)
+                .collect(Collectors.toList());
+
+        List<String> collect1 = Stream
+                .of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+                .filter(x -> x % 2 == 0)
+                .map(numerParzysty -> numerParzysty.toString())
+                .collect(Collectors.toList());
+
+        Stream.of("a2","a3","b1","a11","d22","e12")
+                .map(str -> str.toUpperCase())
+                .filter(str->str.startsWith("A"))
+                .forEach(System.out::println);
+
+        Stream.of("a2","a3","b1","a11","d22","e12")
+                .sorted((str1,str2) -> str1.length() - str2.length() )
+                .forEach(System.out::println);
+
+
+        //operacuje na kolekcjach
+        List<Integer> elements = new ArrayList<>();
+        elements.stream();
+
 
     }
 

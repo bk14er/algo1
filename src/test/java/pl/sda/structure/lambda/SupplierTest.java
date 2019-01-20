@@ -23,7 +23,7 @@ public class SupplierTest {
         /**
          * TODO - supplier zwraca obiekt String o wartośći "test"
          */
-        Supplier<String> test = null;
+        Supplier<String> test = ()->"test";
         assertEquals("test", test.get());
     }
 
@@ -33,7 +33,7 @@ public class SupplierTest {
          * TODO - supplier zwraca obiekt BigDecimal o wartośći 41
          *  BigDecimala tworzymy na 2 sposoby : new BigDecimal("41") lub BigDecimal.valueOf(41)
          */
-        Supplier<BigDecimal> test = () -> null;
+        Supplier<BigDecimal> test = () -> BigDecimal.valueOf(41l);
         assertEquals(BigDecimal.valueOf(41l), test.get());
     }
 
@@ -54,10 +54,13 @@ public class SupplierTest {
 
     @Test
     public void supplyManagerWhereAgeLessThan30() {
-        /**
-         * TODO Supplier użytkownika który jest managerem i ma mnie niż 30 lat
-         */
-        Supplier<TestUser> test = () -> null;
+
+        TestUser testUser = new TestUser();
+
+        testUser.setManager(true);
+        testUser.setAge(23);
+
+        Supplier<TestUser> test = () -> testUser;
 
         assertEquals(true, test.get().isManager());
         assertEquals(true, test.get().getAge() < 30);

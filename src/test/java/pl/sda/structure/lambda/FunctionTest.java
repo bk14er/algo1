@@ -37,7 +37,7 @@ public class FunctionTest {
          * TODO
          * Napisz funkcje zamieniająca podany ciąg znaków do dużych liter (użyj toUpperCase())
          */
-        Function<String, String> changeToUpperCaseFunction = null;
+        Function<String, String> changeToUpperCaseFunction = str->str.toUpperCase();
 
         String expected1 = changeToUpperCaseFunction.apply("aaa");
         String expected2 = changeToUpperCaseFunction.apply("abcd");
@@ -54,7 +54,7 @@ public class FunctionTest {
          * TODO
          * Napisz funkcje zamieniająca podany ciąg znaków do małych liter (użyj toLowerCase())
          */
-        Function<String, String> changeIntegerIntoString = null;
+        Function<String, String> changeIntegerIntoString = (str)->str.toLowerCase();
 
         String expected1 = changeIntegerIntoString.apply("Aaa");
         String expected2 = changeIntegerIntoString.apply("aBcD");

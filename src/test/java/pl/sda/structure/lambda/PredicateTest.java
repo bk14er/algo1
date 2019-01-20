@@ -29,7 +29,7 @@ public class PredicateTest {
          *
          *          Więcej przykładów poniżej w assercjach
          */
-        Predicate<String> endWithPredicate = null;
+        Predicate<String> endWithPredicate = (s) -> s.endsWith("K");
 
         assertTrue(endWithPredicate.test("maK"));
         assertTrue(endWithPredicate.test("K"));
@@ -47,7 +47,7 @@ public class PredicateTest {
          *   Wykorzystaj metodę startWith
          *   Więcej przykładów poniżej w assercjach
          */
-        Predicate<String> startWithWit = null;
+        Predicate<String> startWithWit = (s) -> s.startsWith("wit");
 
         assertTrue(startWithWit.test("wit"));
         assertTrue(startWithWit.test("witwithh"));
@@ -86,7 +86,7 @@ public class PredicateTest {
          *   Wykorzystaj metodę length()
          *   Więcej przykładów poniżej w assercjach
          */
-        Predicate<String> lestThen10Charts = null;
+        Predicate<String> lestThen10Charts = x -> x.length() < 10;
 
         assertFalse(lestThen10Charts.test("0123456789"));
         assertFalse(lestThen10Charts.test("abcdefghij"));
@@ -103,7 +103,7 @@ public class PredicateTest {
         /**
          * Predykat sprawdz czy użytkownik jest managerem i ma 42 lata
          */
-        Predicate<TestUser> isManagerWith42YearsOld = null;
+        Predicate<TestUser> isManagerWith42YearsOld = manager -> manager.isManager() && manager.getAge() == 42;
 
         TestUser manager = new TestUser();
         manager.setManager(true);
