@@ -1,9 +1,6 @@
 package pl.sda.structure.map;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MapIntroduction {
 
@@ -24,7 +21,32 @@ public class MapIntroduction {
      * @param args
      */
     public static void main(String args[]) {
+        mapSimple();
 
+        Map<String, List<Integer>> numbers = new TreeMap<>();
+
+
+        numbers.put("A_L", Arrays.asList(123_321,123_321,183_213));
+        numbers.put("G_L", Arrays.asList(554_321,123_321,183_213));
+
+
+        List<Integer> alNumber = numbers.get("A_L");
+
+        List<String> names = Arrays.asList("A_L", "G_L","M_D","K_W");
+        List<Integer> numbersList = Arrays.asList(333_231_321, 432_432_423,432_123, 234_123);
+
+        Map<String, Integer> addresses = new HashMap<>();
+
+        for(int i =0 ; i < names.size(); i++){
+            addresses.put(names.get(i), numbersList.get(i));
+        }
+
+
+
+
+    }
+
+    private static void mapSimple() {
         HashMap<String, Integer> addresses = new HashMap<>();
 
         Integer anna_lewandowsa = addresses.put("Anna Lewandowsa", 123_532_324);
@@ -64,10 +86,7 @@ public class MapIntroduction {
         for(Integer value : values){
             System.out.println("Wartość: "+ value);
         }
-
-
     }
-
 
 
 }
