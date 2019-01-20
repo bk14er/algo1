@@ -57,7 +57,6 @@ public class StreamIntroduction {
 
         streamDisplayInformations();
 
-
         //operacuje na kolekcjach
         List<Integer> elements = new ArrayList<>();
         elements.stream();

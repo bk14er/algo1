@@ -5,6 +5,7 @@ import pl.sda.structure.tasks.model.TaskPriority;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TaskFilterWithCondition {
 
@@ -41,16 +42,30 @@ public class TaskFilterWithCondition {
     }
 
     public List<Task> getOnlyWith(TaskCondition condition) {
-        List<Task> result = new ArrayList<>();
+//          Rozwiazanie nuer1
+        //        List<Task> result = new ArrayList<>();
+//
+//        for (Task task : allTask) {
+//
+//            if (condition.meetCriteria(task)) {
+//                result.add(task);
+//            }
+//        }
+//
+//        return result;
 
-        for (Task task : allTask) {
+        //Rozwiazanie numer 2
+//        return allTask
+//                .stream()
+//                .filter(t->condition.meetCriteria(t))
+//                .collect(Collectors.toList());
+//         Rozwiazanie numer 3
+        return allTask
+                .stream()
+                .filter(condition::meetCriteria)
+                .collect(Collectors.toList());
 
-            if (condition.meetCriteria(task)) {
-                result.add(task);
-            }
-        }
 
-        return result;
     }
 
 
