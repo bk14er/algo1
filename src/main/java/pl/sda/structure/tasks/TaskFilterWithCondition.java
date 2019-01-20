@@ -10,12 +10,27 @@ public class TaskFilterWithCondition {
 
     private final List<Task> allTask;
 
-    public static final TaskCondition lowLevel = new TaskCondition() {
+    public TaskCondition LOW_LEVEL = new TaskCondition() {
         @Override
         public boolean meetCriteria(Task task) {
             return task.getPriority().equals(TaskPriority.LOW);
         }
     };
+
+    public static final TaskCondition MEDIUM_LEVEL = new TaskCondition() {
+        @Override
+        public boolean meetCriteria(Task task) {
+            return task.getPriority().equals(TaskPriority.MEDIUM);
+        }
+    };
+
+    public static final TaskCondition HIGH_LEVEL = new TaskCondition() {
+        @Override
+        public boolean meetCriteria(Task task) {
+            return task.getPriority().equals(TaskPriority.HIGH);
+        }
+    };
+
 
     public TaskFilterWithCondition(List<Task> allTask) {
         this.allTask = allTask;

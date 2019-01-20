@@ -22,7 +22,7 @@ public class TaskFilterWithConditionTest {
         List<Task> allTasks = Arrays.asList(t1, t2, t3);
         TaskFilterWithCondition filter = new TaskFilterWithCondition(allTasks);
 
-        List<Task> onlyWithLowLevel = filter.getOnlyWith(TaskFilterWithCondition.lowLevel);
+        List<Task> onlyWithLowLevel = filter.getOnlyWith(filter.LOW_LEVEL);
 
         assertEquals(onlyWithLowLevel.size(), 2);
         assertEquals(onlyWithLowLevel, Arrays.asList(t1, t2));
@@ -40,12 +40,7 @@ public class TaskFilterWithConditionTest {
         List<Task> allTasks = Arrays.asList(t1, t2, t3, t4);
         TaskFilterWithCondition filter = new TaskFilterWithCondition(allTasks);
 
-        List<Task> onlyWithMediumLevel = filter.getOnlyWith(new TaskFilterWithCondition.TaskCondition() {
-            @Override
-            public boolean meetCriteria(Task task) {
-                return task.getPriority().equals(TaskPriority.MEDIUM);
-            }
-        });
+        List<Task> onlyWithMediumLevel = filter.getOnlyWith(TaskFilterWithCondition.MEDIUM_LEVEL);
 
         assertEquals(onlyWithMediumLevel.size(), 1);
         assertEquals(onlyWithMediumLevel, Arrays.asList(t4));
@@ -64,15 +59,10 @@ public class TaskFilterWithConditionTest {
         List<Task> allTasks = Arrays.asList(t1, t2, t3, t4, t5, t6);
         TaskFilterWithCondition filter = new TaskFilterWithCondition(allTasks);
 
-        List<Task> onlyWithMediumLevel = filter.getOnlyWith(new TaskFilterWithCondition.TaskCondition() {
-            @Override
-            public boolean meetCriteria(Task task) {
-                return task.getPriority().equals(TaskPriority.HIGH);
-            }
-        });
+        List<Task> onlyWithHightLevel = filter.getOnlyWith(TaskFilterWithCondition.HIGH_LEVEL);
 
-        assertEquals(onlyWithMediumLevel.size(), 2);
-        assertEquals(onlyWithMediumLevel, Arrays.asList(t5, t6));
+        assertEquals(onlyWithHightLevel.size(), 2);
+        assertEquals(onlyWithHightLevel, Arrays.asList(t5, t6));
     }
 
 }
