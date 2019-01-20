@@ -1,6 +1,8 @@
 package pl.sda.structure.map.library;
 
 import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class BookRunner {
@@ -20,9 +22,14 @@ public class BookRunner {
         books.add(new Book("11-46-12",BookType.STORY,"Monika Karkosza", "Przed i za Dubajem"));
         books.add(new Book("11-46-12",BookType.STORY,"Sebastian Szeliga", "Mój Czysty Salonik"));
 
+        Map<BookType, List<Book>> bookTypeListMap = groupByBookType();
 
 
+    }
 
+    public static Map<BookType, List<Book>> groupByBookType(){
+        //TODO Zwróc mape z pogrupowanymi wartościami wedługo typu zwrotnego
+        return null;
     }
 
 }
