@@ -16,8 +16,9 @@ import static org.junit.Assert.*;
  */
 public class TaskFilterSimpleTest {
 
+
     @Test
-    public void getOnlyWithLowLevel() {
+    public void testConditionAsInstance(){
         Task t1 = new Task(TaskPriority.LOW, "Kup mleko", LocalDate.now());
         Task t2 = new Task(TaskPriority.LOW, "Idz na siłke", LocalDate.now().plusDays(1));
         Task t3 = new Task(TaskPriority.HIGH, "Zrób zadanie domowe", LocalDate.now().plusYears(100));
@@ -26,16 +27,35 @@ public class TaskFilterSimpleTest {
         List<Task> allTasks = Arrays.asList(t1, t2, t3);
         TaskFilterSimple filter = new TaskFilterSimple(allTasks);
 
-        List<Task> onlyWithLowLevel = filter.getWithPriority(new Condition() {
-            @Override
-            public boolean meetCriteria(TaskPriority priority) {
-                return priority.equals(TaskPriority.LOW) || priority.equals(TaskPriority.MEDIUM);
-            }
-        });
 
+        List<Task> onlyWithLowLevel = filter.getWithPriority(new TaskFilterSimple.LowCondition());
         assertEquals(onlyWithLowLevel.size(), 2);
         assertEquals(onlyWithLowLevel, Arrays.asList(t1, t2));
+
     }
+
+    @Test
+    public void testConditionAsAnonynmus(){
+        Task t1 = new Task(TaskPriority.LOW, "Kup mleko", LocalDate.now());
+        Task t2 = new Task(TaskPriority.LOW, "Idz na siłke", LocalDate.now().plusDays(1));
+        Task t3 = new Task(TaskPriority.HIGH, "Zrób zadanie domowe", LocalDate.now().plusYears(100));
+
+        //Arrays.asList szybszy sposób na tworzenie listy - zamiast 3x operacja add()
+        List<Task> allTasks = Arrays.asList(t1, t2, t3);
+        TaskFilterSimple filter = new TaskFilterSimple(allTasks);
+
+
+        List<Task> onlyWithLowLevel = filter.getWithPriority(new Condition() {
+            @Override
+            public boolean meetCriteria(Task task) {
+                return task.getPriority().equals(TaskPriority.LOW);
+            }
+        });
+        assertEquals(onlyWithLowLevel.size(), 2);
+        assertEquals(onlyWithLowLevel, Arrays.asList(t1, t2));
+
+    }
+
 
     @Test
     public void getOnlyWithMediumLevel() {
