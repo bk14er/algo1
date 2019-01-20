@@ -16,7 +16,7 @@ public class HashTableTest {
     }
 
     @Test
-    public void PutAndGet() {
+    public void putAndGet() {
         hashTable.put("John Smith", "521-1234");
         hashTable.put("Lisa Smith", "521-8976");
         hashTable.put("Sam Doe", "521-5030");
@@ -33,7 +33,7 @@ public class HashTableTest {
     }
 
     @Test
-    public void Collision() {
+    public void collision() {
         // these keys will collide
         hashTable.put("John Smith", "521-1234");
         hashTable.put("Sandra Dee", "521-9655");

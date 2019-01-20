@@ -24,19 +24,19 @@ public class TaskInts {
         Integer minElement2 = findMinElement(arrayWithRandomCreatedElement);
         System.out.println("Min is:" + minElement2);
 
-        Integer sum1 = sum(arrayCreatedStatic);
-
     }
 
+    /**
+     * Użyj metody max Stream.of().max()
+     */
     public Integer findMaxElement(Integer[] ints) {
         throw new RuntimeException("TODO");
     }
 
+    /**
+     * Użyj metody max Stream.of().min()
+     */
     public Integer findMinElement(Integer[] ints) {
-        throw new RuntimeException("TODO");
-    }
-
-    public Integer sum(Integer[] ints) {
         throw new RuntimeException("TODO");
     }
 

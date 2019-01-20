@@ -17,12 +17,12 @@ public class TaskFilterSimple {
     /**
      * Pobierz taski tylko z priorytetem LOW
      */
-    public List<Task> getWithPriority(Condition condition) {
+    public List<Task> getWithLowPriority() {
         List<Task> result = new ArrayList<>();
 
         for(Task task : allTask){
 
-            if(condition.meetCriteria(task.getPriority())){
+            if(task.getPriority().equals(TaskPriority.LOW)){
                 result.add(task);
             }
 
@@ -63,10 +63,5 @@ public class TaskFilterSimple {
         return result;
     }
 
-    public interface Condition{
-
-        boolean meetCriteria(TaskPriority priority);
-
-    }
 
 }

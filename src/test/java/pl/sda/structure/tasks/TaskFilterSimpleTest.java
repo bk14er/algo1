@@ -29,7 +29,7 @@ public class TaskFilterSimpleTest {
         List<Task> onlyWithLowLevel = filter.getWithPriority(new Condition() {
             @Override
             public boolean meetCriteria(TaskPriority priority) {
-                return priority.equals(TaskPriority.LOW);
+                return priority.equals(TaskPriority.LOW) || priority.equals(TaskPriority.MEDIUM);
             }
         });
 

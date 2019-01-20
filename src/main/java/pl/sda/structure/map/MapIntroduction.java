@@ -1,6 +1,7 @@
 package pl.sda.structure.map;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MapIntroduction {
 
@@ -15,10 +16,16 @@ public class MapIntroduction {
      * remove: Removes the requested key and its value from the map, if the key exists.
      * size: Returns the number of key-value pairs currently in the map.
      *
+     *  Ksiazka adresowa String ->Integer
+     *  Jedna osoba - wiele numerów
+     *
      * @param args
      */
     public static void main(String args[]) {
+
+
     }
+
 
 
 }

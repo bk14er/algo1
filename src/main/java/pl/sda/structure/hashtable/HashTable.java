@@ -38,7 +38,7 @@ public class HashTable {
         else {
             HashEntry entries = data[index];
             // Iterujemy do ostatniego elementu
-            while(entries.next != null) {
+            while (entries.next != null) {
                 entries = entries.next;
             }
             // Dodajemy na koncu nowy wpis
@@ -57,7 +57,7 @@ public class HashTable {
         // Jeśli nie istnieje musimy przeszukać linkedListed
         if (entries != null) {
             // Iterujemy aż znajdziemy szukaną wartość
-            while (!entries.key.equals(key) && entries.next !=null) {
+            while (!entries.key.equals(key) && entries.next != null) {
                 entries = entries.next;
             }
             // Zwracamy wartość
@@ -72,6 +72,10 @@ public class HashTable {
         // Pobierz hashcode dla obiektu String
         int hashCode = key.hashCode();
         System.out.println("hashCode = " + hashCode);
+
+        if (hashCode < 0) {
+            hashCode = hashCode * -1;
+        }
 
 
         // Konwersja hashCodu na indeks - nasza funkcja haszująca
@@ -93,7 +97,7 @@ public class HashTable {
         int bucket = 0;
         StringBuilder hashTableStr = new StringBuilder();
         for (HashEntry entry : data) {
-            if(entry == null) {
+            if (entry == null) {
                 continue;
             }
             hashTableStr.append("\n bucket[")
@@ -102,7 +106,7 @@ public class HashTable {
                     .append(entry.toString());
             bucket++;
             HashEntry temp = entry.next;
-            while(temp != null) {
+            while (temp != null) {
                 hashTableStr.append(" -> ");
                 hashTableStr.append(temp.toString());
                 temp = temp.next;
