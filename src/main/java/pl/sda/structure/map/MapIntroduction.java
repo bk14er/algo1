@@ -35,6 +35,16 @@ public class MapIntroduction {
         System.out.println(adam_nawałka1);
 
 
+        Integer lewandowskaNumber = addresses.get("Anna Lewandowsa");
+        assert 123_532_324 == lewandowskaNumber;
+
+        Integer integer = addresses.get("Donald Tusk");
+
+
+        Integer donaldTuskNumber = addresses.getOrDefault("Donald Tusk", 555_555_123);
+        assert 555_555_123 == donaldTuskNumber;
+
+
     }
 
 
