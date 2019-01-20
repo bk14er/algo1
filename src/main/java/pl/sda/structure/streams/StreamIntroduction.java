@@ -55,12 +55,33 @@ public class StreamIntroduction {
                 .sorted((str1,str2) -> str1.length() - str2.length() )
                 .forEach(System.out::println);
 
+        streamDisplayInformations();
+
 
         //operacuje na kolekcjach
         List<Integer> elements = new ArrayList<>();
         elements.stream();
 
 
+    }
+
+    private static void streamDisplayInformations() {
+        System.out.println("streamDisplayInformations");
+
+
+        Stream.of("a2", "a3", "b1", "a11", "d22", "e12")
+                .map(str -> {
+                    System.out.println("Map: " + str);
+                    return str.toUpperCase();
+                })
+                .filter(
+                        str -> {
+                            System.out.println("Filter: " + str);
+                            return str.startsWith("A");
+                        })
+                .forEach(e -> {
+                    System.out.println("ForEach:" + e);
+                });
     }
 
 
