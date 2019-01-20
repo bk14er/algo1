@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StudentFilterRunner {
 
@@ -96,8 +97,9 @@ public class StudentFilterRunner {
      * Pobierz studentów na piątym roku
      */
     private static List<Student> filterOnlyWith5YearOfStudy(List<Student> students) {
-        //TODO
-        return null;
+        return students.stream()
+                .filter(s->s.getYearOfStudy().equals(YearOfStudy.FIVE))
+                .collect(Collectors.toList());
     }
 
     /**
