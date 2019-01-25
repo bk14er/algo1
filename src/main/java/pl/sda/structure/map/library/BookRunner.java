@@ -4,6 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class BookRunner {
 
@@ -22,14 +23,14 @@ public class BookRunner {
         books.add(new Book("11-46-12",BookType.STORY,"Monika Karkosza", "Przed i za Dubajem"));
         books.add(new Book("11-46-12",BookType.STORY,"Sebastian Szeliga", "Mój Czysty Salonik"));
 
-        Map<BookType, List<Book>> bookTypeListMap = groupByBookType();
+        Map<BookType, List<Book>> bookTypeListMap = groupByBookType(books);
 
 
     }
 
-    public static Map<BookType, List<Book>> groupByBookType(){
-        //TODO Zwróc mape z pogrupowanymi wartościami wedługo typu zwrotnego
-        return null;
+    public static Map<BookType, List<Book>> groupByBookType(Set<Book> books){
+        return books
+                .stream().collect(Collectors.groupingBy(p->p.getBookType()));
     }
 
 }

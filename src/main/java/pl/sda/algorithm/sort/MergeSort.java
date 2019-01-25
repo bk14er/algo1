@@ -1,16 +1,21 @@
 package pl.sda.algorithm.sort;
 
+
+// Zalety: Bardzo szybki algorytm sortowania - O(n log(n))
+// WADY: Potrzebuje dodatkowej tablicy
 public class MergeSort {
 
     public void sort(int arr[], int l, int r) {
-        System.out.println("splitting l r: " + l + " " + r);
+        System.out.println("Dziele tablicę -> left index: " + l + ", right index " + r);
+
         if (l < r) {
             // Znajdz punkt środkowy
             int m = (l + r) / 2;
 
-            // Sortuj pierwszą połówkę
+            // Sortuj pierwszą i drugą połowke
             sort(arr, l, m);
             sort(arr, m + 1, r);
+
 
             // Połącz dwie połowki
             merge(arr, l, m, r);
@@ -21,9 +26,9 @@ public class MergeSort {
     // Pierwsza podtablica to arr[l..m]
     // Druga tablica to arr[m+1..r]
     public void merge(int arr[], int l, int m, int r) {
-        System.out.println("merge l m r: " + l + " " + m + " " + r);
+        System.out.println("Scalam na indeksie left: "+l + ", punkt środokowy m: "+ m +",indeks right: "+ r );
 
-        // Find sizes of two subarrays to be merged
+        // Wyznacz długości 2 tablic do scalenia
         int n1 = m - l + 1;
         int n2 = r - m;
 
@@ -83,8 +88,5 @@ public class MergeSort {
         System.out.println();
     }
 
-    // Zalety: Bardzo szybki algorytm sortowania - O(n log(n))
-
-    // WADY: Potrzebuje dodatkowej tablicy
 
 }

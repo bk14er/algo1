@@ -15,10 +15,10 @@ public class MergeSortTest {
     }
 
     @Test
-    public void Sort() throws Exception {
+    public void sort() throws Exception {
 
         //           l                  r
-        int arr[] = {4, 7, 14, 1, 3, 9, 17};
+        int arr[] = {4,7, 14, 1, 3, 9, 17};
 
         int l = 0;              // left pointer
         int r = arr.length - 1; // right pointer

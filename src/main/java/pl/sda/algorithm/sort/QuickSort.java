@@ -1,14 +1,9 @@
 package pl.sda.algorithm.sort;
 
-import java.util.Arrays;
-
 public class QuickSort {
 
     public int[] sort(int[] array) {
-        // Dobierz zmienną pivot
 
-
-        // pivot z ang. "oś"
         // Iteruj po tablicy i sprawdzaj czy wszystkie elementy na lewo od "pivot" są mniejsze
         // i elementy na prawo od "pivot" są większe
         // Powtarzamy ten proces dla nowy tablic, na lewej i prawej od indeksu "pivot"
@@ -18,32 +13,36 @@ public class QuickSort {
     }
 
     private void quickSort(int[] array, int left, int right) {
-        // Warunek zatrzymania rekurencji
-        if (left >= right) {
+
+        if(left > right){
             return;
         }
 
-        // Krok 1: Dobierz punkt pivot - w naszym przpadku to środkowy element
-        int pivot = array[(left + right)/2];
-
-        // Krok 2: Podziel tablice dla punktu pivot - i zwróc indeks w obrębie które
+        // Krok 1: Podziel tablice dla punktu pivot - i zwróc indeks w obrębie które
         // dokonujemy podziału na 2 podtablice
-        int index = partition(array, left, right, pivot);
+        int index = partition(array, left, right);
 
-        // Step 3: Sortuj lewą i prawą stronę
-        quickSort(array, left, index - 1);
-        quickSort(array, index, right);
+        if (left < index - 1)
+            quickSort(array, left, index - 1);
+        if (index < right)
+            quickSort(array, index, right);
+
     }
 
-    private int partition(int[] array, int left, int right, int pivot) {
+
+    public static int partition(int[] array, int left, int right) {
+
+        // pivot z ang. "oś"
+        // Dobierz punkt pivot - w naszym przpadku to środkowy element (dla uproszczenia)
+        int pivot = array[(left + right) / 2];
+
         // Przesuwaj lewy i prawy indeks do siebie
         while (left <= right) {
 
             // Przesuwaj lewy indeks do momentu aż znajdziesz element większy od "pivot"
-            while(array[left] < pivot) {
+            while (array[left] < pivot) {
                 left++;
             }
-
             // Przesuwaj prawy indeks aż znajdziesz element mniejszy od pivotu
             while (array[right] > pivot) {
                 right--;
@@ -57,12 +56,12 @@ public class QuickSort {
                 right--;
             }
         }
-        //W tym momencie wszystkie elementy na lewo są mniejsze , a na prawo większe od "pivot"
+        // W tym momencie wszystkie elementy na lewo są mniejsze , a na prawo większe od "pivot"
         // Teraz musimy zwrócić następny punkt podziału
         return left;
     }
 
-    private void swap(int[] array, int left, int right) {
+    private static void swap(int[] array, int left, int right) {
         int temp = array[left];
         array[left] = array[right];
         array[right] = temp;
