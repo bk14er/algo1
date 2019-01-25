@@ -10,25 +10,10 @@ public class BinarySearchTree {
      */
     public void add(int value) {
         //TODO
-        root = add(value, root);
     }
 
     public TreeNode add(int value, TreeNode node) {
-        TreeNode newNode = new TreeNode(value);
-
-        if (node == null) {
-            return newNode;
-        }
-
-        if (value < node.value) {
-            TreeNode addedAtLeft = add(value, node.left);
-            node.left = addedAtLeft;
-            return node;
-        }
-
-        TreeNode addedAtRight = add(value, node.right);
-        node.right = addedAtRight;
-        return node;
+       return null;
     }
 
     public int find(int value) {
