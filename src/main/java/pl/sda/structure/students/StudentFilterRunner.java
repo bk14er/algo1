@@ -98,7 +98,7 @@ public class StudentFilterRunner {
      */
     private static List<Student> filterOnlyWith5YearOfStudy(List<Student> students) {
         return students.stream()
-                .filter(s->s.getYearOfStudy().equals(YearOfStudy.FIVE))
+                .filter(s -> s.getYearOfStudy().equals(YearOfStudy.FIVE))
                 .collect(Collectors.toList());
     }
 
@@ -106,24 +106,31 @@ public class StudentFilterRunner {
      * Zwraca studentów których średnia jest mniejsza od 2.0
      */
     private static List<Student> filerAllStudentsWhereAverageLessThan2(List<Student> students) {
-        return null;
+        return students
+                .stream()
+                .filter(s -> s.getAverage().compareTo(BigDecimal.valueOf(2.0)) < 0)
+                .collect(Collectors.toList());
     }
 
     /**
      * zwraca tylko inżynierów na uczelni
      */
     private static List<Student> countEngineers(List<Student> students) {
-        //TODO
-        return null;
+        return students
+                .stream()
+                .filter(s -> s.getStudyType().equals(StudyType.INZ))
+                .collect(Collectors.toList());
     }
 
 
     /**
-     * Pobierz studentów którrzy maja średnią ocen >5
+     * Pobierz studentów którzy maja średnią ocen >5
      */
     private static List<Student> filterAllStudentsWhereAverageGreaterThan5(List<Student> students) {
-        //TODO
-        return null;
+        return students
+                .stream()
+                .filter(s -> s.getAverage().compareTo(BigDecimal.valueOf(5.0)) > 0)
+                .collect(Collectors.toList());
     }
 
 
@@ -131,8 +138,11 @@ public class StudentFilterRunner {
      * Zwraca studentów ze średnią pomiędzy 4.0 a 5.0
      */
     private static List<Student> filterStudentWithAvgBetween4And5(List<Student> students) {
-        //TODO
-        return null;
+        return students
+                .stream()
+                .filter(student -> student.getAverage().compareTo(BigDecimal.valueOf(4.0)) > 0)
+                .filter(student -> student.getAverage().compareTo(BigDecimal.valueOf(5.0)) < 0)
+                .collect(Collectors.toList());
     }
 
 
@@ -140,8 +150,10 @@ public class StudentFilterRunner {
      * Zwraca studentów urodzonych przed rokiem 89 tj. LocalDate.of(1990, 01, 01))
      */
     private static List<Student> filterAllWhereBirdthDayBefore89(List<Student> students) {
-        //TODO
-        return null;
+        return students
+                .stream()
+                .filter(student -> student.getBirdthDay().compareTo(LocalDate.of(1990, 01, 01)) < 0)
+                .collect(Collectors.toList());
     }
 
 }
