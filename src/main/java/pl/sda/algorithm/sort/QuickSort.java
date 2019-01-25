@@ -1,5 +1,7 @@
 package pl.sda.algorithm.sort;
 
+
+//54 26 93 17 77 31 44 55 20
 public class QuickSort {
 
     public int[] sort(int[] array) {
