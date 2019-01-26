@@ -9,9 +9,16 @@ public class BinarySearchTreeTest {
 
     @Test
     public void binaryTreeBuilder1() {
-        //          1
+        //          2
         //         / \
-        //        2   3
+        //        1   3
+        TreeNode root = new TreeNode(2);
+        TreeNode one = new TreeNode(1);
+        TreeNode three = new TreeNode(3);
+
+        root.left = one;
+        root.right = three;
+
     }
 
     @Test
