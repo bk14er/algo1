@@ -160,7 +160,11 @@ public class BinarySearchTree {
     }
 
     private void traversePreOrder(TreeNode node) {
-        //TODO
+        if(node != null){
+            System.out.print(node.value);
+            traversePreOrder(node.left);
+            traversePreOrder(node.right);
+        }
     }
 
     //POST ORDER LEFT -> RIGHT-> ROOT
@@ -169,7 +173,11 @@ public class BinarySearchTree {
     }
 
     private void traversePostOrder(TreeNode node) {
-        //TODO
+        if(node != null){
+            traversePostOrder(node.left);
+            traversePostOrder(node.right);
+            System.out.print(node.value);
+        }
     }
 
 }
