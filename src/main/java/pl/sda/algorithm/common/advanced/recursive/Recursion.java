@@ -27,8 +27,8 @@ public class Recursion {
     public static int iterationSum(int N) {
         int result = 0;
 
-        for(int i= 1; i < N; i++){
-            result = i+result;
+        for (int i = 1; i < N; i++) {
+            result = i + result;
         }
 
         return result;
@@ -41,26 +41,27 @@ public class Recursion {
      * 3 + recursionSum(2)
      * 2 + recursionSum(1)
      * 1  => 1
-     *
      */
     public static int recursionSum(int N) {
-        if(N ==1){
+        if (N == 1) {
             return 1;
         }
-        return N + recursionSum(N-1);
+        return N + recursionSum(N - 1);
     }
 
     /**
-    5! = 1 * 2 * 3 * 4 * 5
-
-    5 * silna(4) ..
-    4 * silnia(3)
-
-
+     * 5! = 1 * 2 * 3 * 4 * 5
+     * <p>
+     * 5 * silna(4) ..
+     * 4 * silnia(3)
      */
-    public static int fractional(int N){
+    public static int fractional(int N) {
 
-        return -1;
+        if (N < 2) {
+            return 1;
+        }
+
+        return N * fractional(N - 1);
     }
 
 
@@ -74,6 +75,13 @@ public class Recursion {
      * @param number
      */
     public static void head(int number) {
+
+        if(number == 0){
+            return;
+        }
+
+        head(number -1);
+        System.out.println(number);
     }
 
     /**
@@ -82,6 +90,13 @@ public class Recursion {
      * @param number
      */
     public static void tail(int number) {
+        if(number == 0){
+            return;
+        }
+
+        System.out.println(number);
+        tail(number -1);
+
     }
 
 
