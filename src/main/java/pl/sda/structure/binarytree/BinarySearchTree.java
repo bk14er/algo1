@@ -9,17 +9,21 @@ public class BinarySearchTree {
      * Metoda odpowiedzialna za dodanie elementu do drzewa.
      */
     public void add(int value) {
-
-        if(root == null){
-            root = add(value,null);
-        }else{
-            add(value,root);
-        }
-        //TODO
+        root = add(value, root);
     }
 
     public TreeNode add(int value, TreeNode node) {
-       return null;
+        if (node == null) {
+            TreeNode newNode = new TreeNode(value);
+            return newNode;
+        }
+
+        if (value < node.value) {
+            node.left = add(value, node.left);
+        } else {
+            node.right = add(value, node.right);
+        }
+        return node;
     }
 
     public int find(int value) {
