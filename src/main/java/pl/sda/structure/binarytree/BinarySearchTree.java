@@ -46,12 +46,11 @@ public class BinarySearchTree {
 
         if (value < node.value) {
             System.out.println("Szukam w lewej gałęzi: " + value);
-            //TODO rekurencyjnie wywołaj metodę find z odpowiednimi parametrami
+            return find(node.left, value);
         }
 
         System.out.println("Szukam w prawej gałęzi: " + value);
-        //TODO rekurencyjnie wywołaj metodę find z odpowiednimi parametrami
-        return -1;
+        return find(node.right, value);
     }
 
 
@@ -71,8 +70,10 @@ public class BinarySearchTree {
      * w przeciwnym razie schodzimy rekurencyjnie niżej tj. findSmallestValue(root.left);
      */
     private int findSmallestValue(TreeNode root) {
-        //TODO
-        return -1;
+        if(root.left == null){
+            return root.value;
+        }
+        return findSmallestValue(root.left);
     }
 
 
@@ -105,6 +106,9 @@ public class BinarySearchTree {
 
             //Nie ma potomków
             //TODO
+            if(node.left == null && node.right == null){
+                return null;
+            }
 
             //Ma jednego potomka - node.right
             //TODO
@@ -117,7 +121,12 @@ public class BinarySearchTree {
             throw new RuntimeException("TODO");
         }
 
-        // Szukamy noda do usunięcia:
+
+        if (toDelete < node.value){
+            node.left = delete(node.left,toDelete);
+        }else{
+            node.right = delete(node.right,toDelete);
+        }
 
         return node;
     }
