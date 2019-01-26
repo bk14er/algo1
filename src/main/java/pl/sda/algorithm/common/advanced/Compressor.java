@@ -21,6 +21,6 @@ public class Compressor {
         }
         // Nie zapomnij o warunku:
         //"Jeśli skompresowany ciąg znaków nie jest mniejszy od oryginału - zwróc oryginał"
-        return compressed.length() < str.length() ? compressed.toString() : str ;
+        return compressed.toString();
     }
 }
