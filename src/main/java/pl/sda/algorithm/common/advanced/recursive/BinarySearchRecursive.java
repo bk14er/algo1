@@ -4,25 +4,39 @@ public class BinarySearchRecursive {
 
     /**
      * Rekurencyjna wersja algorytmu przeszukiwania binarnego:
-     *
-     *  if(endIndex< startIndex)
-     *      return -1
-     *
-     *  middleIndex = (startIndex + endIndex) /2
-     *
-     *  if(array[middleIndex] == elementToFind)
-     *      retrn middleIndex
-     *
-     *  else if (elementToFind < array[middleIndex])
-     *      return findElement(array, middleIndex+1 , endIndex, elementToFind)
-     *  else
-     *      return findElement(array, middleIndex + 1, endIndex, elementToFind)
+     * <p>
+     * if(endIndex< startIndex)
+     * return -1
+     * <p>
+     * middleIndex = (startIndex + endIndex) /2
+     * <p>
+     * if(array[middleIndex] == elementToFind)
+     * retrn middleIndex
+     * <p>
+     * else if (elementToFind < array[middleIndex])
+     * return findElement(array, middleIndex+1 , endIndex, elementToFind)
+     * else
+     * return findElement(array, middleIndex + 1, endIndex, elementToFind)
      */
     public int findElement(int array[], int startIndex, int endIndex, int elementToFind) {
 
+        if (startIndex > endIndex) {
+            return -1;
+        }
 
-        return -1;
+        int middle = (startIndex + endIndex) / 2;
 
+
+        if (array[middle] == elementToFind) {
+            return middle;
+        }
+
+        if (elementToFind < array[middle]) {
+            //Szukanie w lewej połówce
+            return findElement(array, startIndex, middle, elementToFind);
+        } else {
+            return findElement(array, middle, endIndex, elementToFind);
+        }
     }
 
     public int binarySearch(int elementToFind, int[] array) {

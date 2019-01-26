@@ -2,7 +2,7 @@ package pl.sda.algorithm.common.advanced.recursive;
 
 public class FibonacciNumbers {
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
 
         //Ciąg fibonacciego: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987 itd
 
@@ -22,8 +22,15 @@ public class FibonacciNumbers {
      * @return
      */
     public static int fib(int n) {
-       //TODO
-        return -1;
+
+        if (n < 0) {
+            return 0;
+        }
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+
+        return fib(n - 2) + fib(n - 1);
     }
 
 
