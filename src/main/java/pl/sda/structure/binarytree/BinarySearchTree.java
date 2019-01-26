@@ -9,6 +9,12 @@ public class BinarySearchTree {
      * Metoda odpowiedzialna za dodanie elementu do drzewa.
      */
     public void add(int value) {
+
+        if(root == null){
+            root = add(value,null);
+        }else{
+            add(value,root);
+        }
         //TODO
     }
 

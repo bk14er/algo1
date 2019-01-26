@@ -31,6 +31,25 @@ public class BinarySearchTreeTest {
          *       3   5   7  9
          **/
         TreeNode root  = new TreeNode(6);
+
+        TreeNode four  = new TreeNode(4);
+        TreeNode eight  = new TreeNode(8);
+
+        root.left = four;
+        root.right = eight;
+
+        TreeNode three  = new TreeNode(3);
+        TreeNode five  = new TreeNode(5);
+
+        four.left = three;
+        four.right = five;
+
+        TreeNode seven  = new TreeNode(7);
+        TreeNode nine  = new TreeNode(9);
+
+        eight.left = seven;
+        eight.right = nine;
+
     }
 
 
