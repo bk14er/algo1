@@ -13,7 +13,7 @@ public class IntersectionTest {
 
     @Test
     public void arrayIntersectionBruteForce() {
-
+        //elementy są posortowane
         int[] array1 = { 1,2,4,5,6 };
         int[] array2 = { 2,3,5,7 };
         List<Integer> result = intersector.intersectBruteForce(array1, array2);

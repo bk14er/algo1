@@ -24,11 +24,15 @@ public class Intersection {
     public List<Integer> intersectBruteForce(int[] array1, int[] array2) {
         List<Integer> collector = new ArrayList<>();
 
+        for(int i = 0; i < array1.length; i++){
 
-        /**
-         * TODO postępuj wedługo pseudokodu powyżej
-         */
+            for(int j = 0; j < array2.length; j++){
+                if(array1[i] == array2[j]){
+                    collector.add(array1[i]);
+                }
 
+            }
+        }
         return collector;
     }
 
@@ -73,14 +77,22 @@ public class Intersection {
         int n = array1.length;
         int m = array2.length;
 
-        /**
-         * TODO
-         * Iteruj równoczesnie sprawdzając warunek na i < n && j < m
-         * while( i < n && j < m)
-         * {
-         *   ..wykonaj kroki wedługo opisu nad metodą
-         * }
-         */
+          while( i < n && j < m)
+          {
+              if(array1[i] == array2[j]){
+                  collector.add(array1[i]);
+                  i++;
+                  j++;
+              }
+
+              if(array1[i] > array2[j]){
+                  j++;
+              }
+
+              if(array1[i] < array2[j]){
+                  i++;
+              }
+          }
 
         return collector;
     }
