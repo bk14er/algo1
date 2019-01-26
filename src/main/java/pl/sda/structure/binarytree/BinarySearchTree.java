@@ -143,6 +143,14 @@ public class BinarySearchTree {
     }
 
     private void traverseInOrder(TreeNode node) {
+
+        if(node != null){
+            traverseInOrder(node.left);
+            System.out.print(node.value);
+            traverseInOrder(node.right);
+        }
+
+
         //TODO
     }
 
