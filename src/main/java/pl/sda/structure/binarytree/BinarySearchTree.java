@@ -112,13 +112,18 @@ public class BinarySearchTree {
 
             //Ma jednego potomka - node.right
             //TODO
+            if( node.right != null){
+                return node.right;
+            }
 
-            //Ma jednego potmka - node.left
-            //TODO
+            if(node.left != null){
+                return node.left;
+            }
 
-            // Ma 2 potomków -  najtrudniejszy przypadek:
-            //znajdz najmniejszego potomka w prawym dziecku findSmallestValue(node.right)
-            throw new RuntimeException("TODO");
+            int minVal = findSmallestValue(node.right);
+            node.value = minVal;
+            node.right = delete(node.right,minVal);
+
         }
 
 
