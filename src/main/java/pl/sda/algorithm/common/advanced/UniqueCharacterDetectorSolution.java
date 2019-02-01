@@ -1,12 +1,6 @@
 package pl.sda.algorithm.common.advanced;
 
-/*
-    Zapisz na indeksie od pobranego znaku w tablicy element w iteracji wartość true
-    Dodatkowo sprawdz czy już wczesniej zostało zapisane w chars[asciCharValue]
-
-    Zobacz UniqueCharacterDetectorTest
- */
-public class UniqueCharacterDetector {
+public class UniqueCharacterDetectorSolution {
 
     public boolean isUnique(String text) {
         boolean[] char_set = new boolean[128];
@@ -16,8 +10,12 @@ public class UniqueCharacterDetector {
         int asciCharValue = text.charAt(0);
         char[] chars = text.toCharArray();
 
-        for (int i = 0; i < text.length(); i++) {
-            //TODO
+        for(int i = 0 ; i < text.length(); i++){
+            int asci_value = text.charAt(i);
+            if(char_set[asci_value]){
+                return false;
+            }
+            char_set[asci_value] = true;
         }
 
 

@@ -1,8 +1,6 @@
 package pl.sda.algorithm.common.advanced;
 
-
-//Zobacz UrlConverterTest
-public class UrlConverter {
+public class UrlConverterSolution {
 
     public String urlify(String url) {
         //Pozbywamy się spacji na początku i na końcu (funkcja trim() robi to za nas :))
@@ -24,11 +22,15 @@ public class UrlConverter {
         int pointer = 0;
         for (int i = 0; i < url.length(); i++) {
 
-            //Jeśli wykryliśmy spacje
             if (url.charAt(i) == ' ') {
-                //TODO
+                result[pointer] = '%';
+                result[pointer + 1] = '2';
+                result[pointer + 2] = '0';
+                pointer = pointer + 3;
+
             }else{
-                //TODO
+                result[pointer] = url.charAt(i);
+                pointer++;
             }
 
         }

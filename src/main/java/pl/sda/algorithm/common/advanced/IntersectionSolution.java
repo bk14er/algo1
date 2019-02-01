@@ -3,9 +3,7 @@ package pl.sda.algorithm.common.advanced;
 import java.util.ArrayList;
 import java.util.List;
 
-
-//Zobacz IntersectionTest
-public class Intersection {
+public class IntersectionSolution {
 
     /**
      * Wersja algorytmu "brute force" -
@@ -29,7 +27,9 @@ public class Intersection {
         for(int i = 0; i < array1.length; i++){
 
             for(int j = 0; j < array2.length; j++){
-              //TODO
+                if(array1[i] == array2[j]){
+                    collector.add(array1[i]);
+                }
 
             }
         }
@@ -79,7 +79,19 @@ public class Intersection {
 
           while( i < n && j < m)
           {
-            //TODO postępuj zgodnie z opisem w komentarzu nad metodą
+              if(array1[i] == array2[j]){
+                  collector.add(array1[i]);
+                  i++;
+                  j++;
+              }
+
+              if(array1[i] > array2[j]){
+                  j++;
+              }
+
+              if(array1[i] < array2[j]){
+                  i++;
+              }
           }
 
         return collector;

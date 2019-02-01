@@ -1,7 +1,6 @@
 package pl.sda.algorithm.common.advanced;
 
-//zobacz PalindromeDetectorTest
-public class PalindromeDetector {
+public class PalindromeDetectorSolution {
 
     public boolean isPalindrome(String text) {
         text = text.replaceAll("!","");
@@ -12,7 +11,9 @@ public class PalindromeDetector {
 
         for(int i=0 ; i < length; i++){
 
-           //TODO zaimplementuj
+            if(content[i] != content[length- 1 - i]){
+                return false;
+            }
 
         }
 
